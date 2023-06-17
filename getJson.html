@@ -4,7 +4,6 @@
 
 <h2>Get JSON Data from a PHP Server</h2>
 <p id="demo"></p>
-<p class="a"></p>
 <script>
 const obj = { "limit":10 };
 const xmlhttp = new XMLHttpRequest();
@@ -12,13 +11,12 @@ xmlhttp.onload = function() {
   myObj = JSON.parse(this.responseText);
   let text = ""
   for (let x in myObj) {
-    text += myObj[x].name + "<br>";
+    text += "Nazwa: "+myObj[x].name + " Opis: "+myObj[x].des + " Kategoria: "+myObj[x].nazwa +  "<br>";
   }
   document.getElementById("demo").innerHTML = text;
-  const akap = document.querySelector(".a")
-  akap.innerHTML = myObj[1].name;
+
 };
-xmlhttp.open("GET", "json.php?r=" + '1');
+xmlhttp.open("GET", "http://192.168.43.18/git/otwock-admin-panel/json.php?r=1");
 xmlhttp.send();
 
 
