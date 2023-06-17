@@ -22,11 +22,11 @@ map.on('dblclick', function(event) {
     .then(function(streetNames) {
       var popupContent = '<p id="zdarzenie">woda</p>' + '<p id="idZdarzenia">1</p>';
       if (streetNames.length > 0) {
-        popupContent += '<p>Ulice:</p><ul>';
+        popupContent += '<p>Ulica:</p><ol>';
         streetNames.forEach(function(name) {
           popupContent += '<li>' + name + '</li>';
         });
-        popupContent += '</ul>';
+        popupContent += '</ol>';
       }
       marker.bindPopup(popupContent).openPopup();
 
