@@ -1,6 +1,6 @@
 <header class='header'>
 <div class="logo">
-      <img src="./img/logo.svg" alt="Logo Otwock Alert">
+      <img src="./img/herb.png" alt="Logo Otwock Alert">
     </div>
     <div class="username">
       <?php

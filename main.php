@@ -27,6 +27,9 @@ session_start();
                     include "show.php";
                 }
             }
+            else{
+                include "welcome.php";
+            }
         ?>
     </section>
 </body>
