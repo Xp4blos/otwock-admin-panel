@@ -1,4 +1,9 @@
-var map = L.map('map').setView([52.1023,21.2669], 12);
+var map = L.map('map', {
+  center: [52.1023, 21.2669],
+  zoom: 12,
+  doubleClickZoom: false
+});
+
 
 var p = document.getElementById('p');
 
@@ -8,7 +13,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var markers = [];
 
-map.on('click', function(event) {
+map.on('dblclick', function(event) {
   var latLng = event.latlng;
 
   var marker = L.marker(latLng).addTo(map);
@@ -52,7 +57,7 @@ var drawnItems = new L.FeatureGroup().addTo(map);
       draw: {
         polygon: true,
         rectangle: true,
-        circle: false,
+        circle: true,
         circlemarker: false,
         polyline: false,
         marker: false
