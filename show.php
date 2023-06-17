@@ -46,6 +46,7 @@
         <th>Nazwa</th>
         <th>Opis</th>
         <th>Status</th>
+        <th></th>
       </tr>
       <?php
       // Połączenie z bazą danych
@@ -60,7 +61,7 @@
       }
 
       // Pobranie danych z bazy danych
-      $sql = "SELECT events.name, events.des, kategorie.nazwa, events.status FROM events INNER JOIN kategorie ON kategorie.id = events.kategoria_id;";
+      $sql = "SELECT events.name, events.des, kategorie.nazwa, events.status, events.id FROM events INNER JOIN kategorie ON kategorie.id = events.kategoria_id ORDER BY status;";
       $result = $conn->query($sql);
 
       if ($result !== false && $result->num_rows > 0) {
@@ -75,6 +76,10 @@
               } elseif ($row[3] == 2) {
                   echo '<img class="status-image" src="./img/red.png" alt="Obraz 2">';
               }
+              
+              echo "</td>";
+              echo "<td>";
+              echo "<a class='status-edit' href='status_update.php?id=".$row[4]."&status=".$row[3]."'>edit<a/>";
               echo "</td>";
               echo "</tr>";
           }
