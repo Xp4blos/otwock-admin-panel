@@ -1,11 +1,12 @@
 <div class="containerA">
     <h1 class="h1A">Formularz</h1>
-    <form action="main.php?status=2" method="post">
+    <form action="./projekt/index.html" method="post">
       <label class="labelA" for="kategoria">Kategoria:</label>
       <select class="inputens" id="kategoria" name="kategoria">
         <?php
          require_once "connect.php";
 
+         
          $conn = new mysqli($db_adress, $db_user, $db_passwd, $db_name);
 
         // Sprawdzenie połączenia
@@ -19,11 +20,11 @@
             while ($row = mysqli_fetch_array($result)) {
                 echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
             }
-        
-
+            
         $conn->close();
         ?>
       </select>
+      
 
       <label class="labelA" for="nazwa">Nazwa:</label>
       <input class="inputens" type="text" id="nazwa" name="nazwa" required>
@@ -39,6 +40,8 @@ if (isset($_POST['kategoria'], $_POST['nazwa'], $_POST['opis']) && !empty($_POST
     $kategoria = $_POST['kategoria'];
     $nazwa = $_POST['nazwa'];
     $opis = $_POST['opis'];
+    
+    setcookie("kategoria",$kategoria,time() + 3600 * 8);
 
     require_once "connect.php";
 
@@ -62,6 +65,7 @@ if (isset($_POST['kategoria'], $_POST['nazwa'], $_POST['opis']) && !empty($_POST
 } else {
     echo "<p class='error-message' >Wszystkie pola formularza muszą być wypełnione.<p>";
 }
+
 ?>
 
   </div>
