@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "833276082147",
+    "project_id": "otwock-effcb",
+    "storage_bucket": "otwock-effcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833276082147:android:a696ec5a94d6d2b74b92d6",
+        "android_client_info": {
+          "package_name": "pl.zs6sobieski.www"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833276082147-87c5tj6bdmpn9ih5t09k5ahn07snbgu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMZ-kS1qefA6ie07FDBr53uEtKMOj5hBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833276082147-87c5tj6bdmpn9ih5t09k5ahn07snbgu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
