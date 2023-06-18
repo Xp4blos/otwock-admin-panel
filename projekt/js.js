@@ -20,7 +20,7 @@ map.on('dblclick', function(event) {
   //Wyświetlanie pina
   fetchStreetNames(latLng)
   .then(function(streetNames) {
-    var popupContent = "<form method='post' action='maphandler.php'><div class='ukrywanie'><input value="+ latLng.lat.toFixed(4) + " class='cordx' name='cordx'>"+ "<input value="+ latLng.lng.toFixed(4) + " class='cordy' name='cordy'><input value="+document.querySelector('.nazwa').textContent + " name='name'><input value="+document.querySelector('.kat').textContent + " name='kat'><input value="+document.querySelector('.opis').textContent + " name='opis'></div><br>" ;
+    var popupContent = "<form method='post' action='maphandler.php'><div class='ukrywanie'><input value="+ latLng.lat.toFixed(4) + " class='cordx' name='cordx'>"+ "<input value="+ latLng.lng.toFixed(4) + " class='cordy' name='cordy'><input value='"+document.querySelector('.nazwa').textContent + "' name='name'><input value="+document.querySelector('.kat').textContent + " name='kat'><input value='"+document.querySelector('.opis').textContent + "' name='opis'></div><br>" ;
     if (streetNames.length > 0) {
       popupContent += 'Ulica: ';
       streetNames.forEach(function(name) {
