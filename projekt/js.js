@@ -19,16 +19,23 @@ map.on('dblclick', function(event) {
   markers.push(marker);
   //Wyświetlanie pina
   fetchStreetNames(latLng)
-    .then(function(streetNames) {
-      var popupContent = '<p id="zdarzenie">woda</p>' + '<p id="idZdarzenia">1</p>';
-      if (streetNames.length > 0) {
-        popupContent += '<p>Ulica:</p><ol>';
-        streetNames.forEach(function(name) {
-          popupContent += '<li>' + name + '</li>';
-        });
-        popupContent += '</ol>';
-      }
-      marker.bindPopup(popupContent).openPopup();
+  .then(function(streetNames) {
+    var popupContent = "<form method='post' action='maphandler.php'><div class='ukrywanie'><input value="+ latLng.lat.toFixed(4) + " class='cordx' name='cordx'>"+ "<input value="+ latLng.lng.toFixed(4) + " class='cordy' name='cordy'><input value="+document.querySelector('.nazwa').textContent + " name='name'><input value="+document.querySelector('.kat').textContent + " name='kat'><input value="+document.querySelector('.opis').textContent + " name='opis'></div><br>" ;
+    if (streetNames.length > 0) {
+      popupContent += 'Ulica: ';
+      streetNames.forEach(function(name) {
+       
+        popupContent += '<p class="street">' + name + '</p>';
+        popupContent += '<input name="ulic" class="ukrywanie" value="' + name + '">';
+        return name;
+       
+      });
+      
+      
+    }
+    
+    popupContent += "<input type='submit' name='submit' class='map-submit' value='Potwierdź'></form>" 
+    marker.bindPopup(popupContent).openPopup();
 
       var deleteButton = marker.getPopup().getContent().querySelector('.deleteButton');
       deleteButton.addEventListener('click', function() {

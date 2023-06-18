@@ -7,13 +7,13 @@
         </div>
     </div>
     <div class="panel-bottom">
-        <a href="./panel.php?type=protokoly" class="panel-element-wrapper panel-a">
+        <a href="./main.php?status=1" class="panel-element-wrapper panel-a">
             <div class="panel-element panel-element-a">
                 <p class="panel-text">Podgląd zdarzeń </p>
 
             </div>
         </a>
-        <a href="./panel.php?type=generuj" class="panel-element-wrapper panel-b">
+        <a href="./main.php?status=2" class="panel-element-wrapper panel-b">
             <div class="panel-element panel-element-b">
                 <p class="panel-text" >Dodaj zdarzenie</p>
             </div>

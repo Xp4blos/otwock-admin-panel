@@ -4,14 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaflet Map</title>
+  <title>Otwock Alert</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="../img/herb.png" type="image/x-icon">
 </head>
 <body>
+  <header class="map-header">
+    <img src="../img/herb.png" alt="" class="logo">
+    <p>Wybierz lokalizacje</p>
+  </header>
   <div id="map"></div>
-  <button id="deleteButton">Usuń ostatni marker</button>
+  <button id="deleteButton" class='map-submit'>Usuń ostatni marker</button>
+  <div class="ukrywanie">
   <?php 
    // Sprawdzenie czy wszystkie pola formularza są wypełnione
    if (isset($_POST['kategoria'], $_POST['nazwa'], $_POST['opis']) && !empty($_POST['kategoria']) && !empty($_POST['nazwa']) && !empty($_POST['opis'])) {
@@ -30,25 +36,16 @@
    
        // Wstawienie danych do tabeli events
       //  $sql = "INSERT INTO events VALUES (NULL,'$nazwa','$opis',$kategoria,1)";
-       include "..\"
+       include "..\mielenie.php";
 
+       
       echo "<br>";
       echo "Kategoria: <p class='kat'>".$kategoria."</p>";
       echo "Nazwa: <p class='nazwa'>".$nazwa."</p>";
       echo "Opis: <p class='opis'>".$opis."</p>";
-      
-   
-  //      if ($conn->query($sql) === TRUE) {
-  //          echo "<p class='error-message' >Dane zostały zapisane w bazie danych.<p>";
-  //      } else {
-  //          echo "<p class='error-message' >Błąd podczas zapisu danych: <p>" . $conn->error;
-  //      }
-   
-  //      $conn->close();
-  //  } else {
-  //      echo "<p class='error-message' >Wszystkie pola formularza muszą być wypełnione.<p>";
     }
    ?>
+   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
   <script src="js.js"></script>

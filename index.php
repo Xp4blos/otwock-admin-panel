@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Otwock Alert - Logowanie</title>
+  <link rel="shortcut icon" href="./img/herb.png" type="image/x-icon">
   <style>
     body {
       font-family: Arial, sans-serif;
