@@ -6,7 +6,7 @@ body {
   }
 
   header {
-    background-color: #FFD700;
+    background-color: rgb(248, 244, 0);
     color: black;
     padding: 20px;
     display: flex;
@@ -19,7 +19,6 @@ body {
   }
 
   .logo img {
-    width: 40px;
     height: 40px;
     vertical-align: middle;
   }
@@ -37,14 +36,15 @@ body {
     color: black;
     text-decoration: none;
     margin-left: 10px;
-    border-bottom: #FFD700 solid 1px;
+    border-bottom: rgb(248, 244, 0) solid 1px;
     transition: .3s;
   }
   a.logout{
     border: none;
     background-color: black;
-    color: #FFD700;
-    padding: 5px;
+    border: black solid 1px;
+    color: white;
+    padding: 7px;
     border-radius: 5px;
   }
   .nav-links a:hover{
@@ -52,9 +52,8 @@ body {
     color: dimgray;
   }
   a.logout:hover{
-    border:none;
-    background-color: dimgray;
-    color:#FFD700
+    background-color: white;
+    color:black
 
   }
 
@@ -109,3 +108,85 @@ body {
     margin-bottom: 10px;
     text-align:center;
   }
+
+  /* WELCOME PANEL */
+
+
+.panel-content{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+.panel-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.panel-title{
+    display: block;
+    padding: 30px;
+    font-size: 35px;
+    font-weight: normal;
+    color: rgb(38, 38, 38);
+}
+.panel-date{
+    padding: 10px;
+    margin: 10px;
+    font-size: 25px;
+}
+.panel-bottom{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.panel-element-wrapper{
+    display: block;
+    transition: 0.5s;
+    width: 300px;
+    height: 300px;
+    line-height: 250px;
+    font-size: 60px;
+    margin: 25px;
+    
+    background: linear-gradient(135deg, var(--c1, rgb(248, 244, 0)) 45%, var(--c2, rgb(241, 255, 113)) 45%, var(--c1, rgba(248, 244, 0))) var(--x, 0)/ 200%;
+    
+    text-decoration: none;
+
+}
+.panel-element-wrapper:hover{
+     --x: 30%;
+}
+
+.panel-element{
+    text-align: center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: 12%;
+    background-position-y: 12%;
+    transition: .5s;
+}
+.panel-element-a{
+    background-image: url(../img/eye.png);
+    background-size: 35%;
+}
+.panel-element-b{
+    background-image: url(../img/add.png);
+    background-size: 35%;
+}
+.panel-element:hover{
+    background-size: 40%;
+}
+.panel-element-b:hover{
+    background-size: 45%;
+}
+.panel-text{
+    
+    font-size: 30px;
+    color:black
+}

@@ -35,6 +35,9 @@
       max-width: 20px;
       max-height: 20px;
     }
+    .edit{
+      width:25px;
+    }
   </style>
 </head>
 <body>
@@ -45,6 +48,7 @@
         <th>Kategoria</th>
         <th>Nazwa</th>
         <th>Opis</th>
+        <th>Ulica</th>
         <th>Status</th>
         <th></th>
       </tr>
@@ -61,7 +65,7 @@
       }
 
       // Pobranie danych z bazy danych
-      $sql = "SELECT events.name, events.des, kategorie.nazwa, events.status, events.id FROM events INNER JOIN kategorie ON kategorie.id = events.kategoria_id ORDER BY status;";
+      $sql = "SELECT events.name, events.des, kategorie.nazwa, events.status, events.id, events.ulica FROM events INNER JOIN kategorie ON kategorie.id = events.kategoria_id ORDER BY status;";
       $result = $conn->query($sql);
 
       if ($result !== false && $result->num_rows > 0) {
@@ -70,6 +74,7 @@
               echo "<td>" . $row[2] . "</td>";
               echo "<td>" . $row[0] . "</td>";
               echo "<td>" . $row[1] . "</td>";
+              echo "<td>" . $row[5] . "</td>";
               echo "<td>";
               if ($row[3] == 1) {
                   echo '<img class="status-image" src="./img/green.png" alt="Obraz 1">';
@@ -79,7 +84,7 @@
               
               echo "</td>";
               echo "<td>";
-              echo "<a class='status-edit' href='status_update.php?id=".$row[4]."&status=".$row[3]."'>edit<a/>";
+              echo "<a class='status-edit' href='status_update.php?id=".$row[4]."&status=".$row[3]."'><img class='edit' src='./img/edit.png'><a/>";
               echo "</td>";
               echo "</tr>";
           }

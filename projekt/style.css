@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#map{
+    height: 90vh;
+    z-index: 0;
+}
+
+#zdarzenie{
+    border: 1px solid black;
+}
+.ukrywanie{
+    display: none;
+}
+#deleteButton{
+    margin: 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 40px;
+    left: 40px;
+}
+.street{
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Przycisk */
+.map-submit {
+    display: block;
+    background-color: rgb(248, 244, 0);
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Efekt hover */
+  .map-submit:hover {
+    background-color: #fbbf00;
+  }
+
+
+  .map-header{
+    height: 10vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(248, 244, 0);
+    color: black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .logo{
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-left: 20px;
+  }

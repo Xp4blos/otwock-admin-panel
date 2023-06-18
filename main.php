@@ -7,6 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otwock Alert</title>
+    <link rel="shortcut icon" href="./img/herb.png" type="image/x-icon">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
@@ -26,6 +27,9 @@ session_start();
                 if($status == 1){
                     include "show.php";
                 }
+            }
+            else{
+                include "welcome.php";
             }
         ?>
     </section>

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Otwock Alert - Logowanie</title>
+  <link rel="shortcut icon" href="./img/herb.png" type="image/x-icon">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -28,7 +29,6 @@
       display: block;
       margin: 0 auto;
       width: 100px;
-      height: 100px;
       margin-bottom: 20px;
     }
 
@@ -65,7 +65,7 @@
 <body>
   <div class="container">
     <h1>Otwock Alert</h1>
-    <img src="./img/logo.svg" alt="Logo Otwock Alert">
+    <img src="./img/herb.png" alt="Logo Otwock Alert">
     <form action="./index.php" method="post">
       <input type="text" name="login" placeholder="Login" required>
       <input type="password" name="password" placeholder="Hasło" required>
